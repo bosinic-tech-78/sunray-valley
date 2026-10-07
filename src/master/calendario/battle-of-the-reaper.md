@@ -6,8 +6,7 @@ tipo: Evento Canonico (Lore)
 collegamenti:
   trama_rel: Capitolo 10 - La High Clerist's Tower (Livello 13 -> 14)
   luogo_rel: High Clerist's Tower
-  png_rel:
-    - Kitiara Uth Matar
+  png_rel: []
 ---
 
 a
