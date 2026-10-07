@@ -4,9 +4,7 @@ ordine: 8
 stato: Da Giocare
 incastri:
   png_rel: []
-  luoghi_rel:
-    - Le Rovine Soffocanti di Vingaard
-    - Maelgoth
+  luoghi_rel: []
   tesori_rel:
     - Mantello della Resistenza agli Incantesimi
     - Verga del Patto del Custode
