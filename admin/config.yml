@@ -342,7 +342,7 @@ collections:
       - { label: "Proprietario (Nome PG)", name: "proprietario", widget: "string", required: false, hint: "Inserisci il nome esatto del Personaggio (es. Tanis). Lascia vuoto se non è di nessuno."}
 
   - name: "master_calendario"
-    label: "🔒 Calendario di Krynn"
+    label: "🔒 Calendario di Sunray"
     folder: "src/master/calendario"
     create: true
     slug: "{{slug}}"
