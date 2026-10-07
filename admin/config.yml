@@ -3,7 +3,7 @@
 # The backend option specifies how to access the content for your site
 backend:
   name: github
-  repo: bosinic-tech-78/cronache-di-krynn  
+  repo: bosinic-tech-78/sunray-valley
   branch: master
 
 # Uncomment below to enable drafts https://www.decapcms.org/docs/add-to-your-site/#editorial-workflow
