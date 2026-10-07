@@ -1,0 +1,407 @@
+/* ==========================================
+   CRONACHE DI KRYNN - DRAGONLANCE THEME
+   ========================================== */
+
+/* Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@600;800&family=MedievalSharp&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;900&family=IM+Fell+English:ital@0;1&display=swap');
+
+:root {
+  --bg-color: #f4ecd8;         /* Colore pergamena */
+  --text-color: #2b1e16;       /* Inchiostro scuro */
+  --primary-gold: #c59b27;     /* Oro Dragonlance */
+  --accent-red: #8b0000;       /* Rosso Solamnia / Rosso Sangue */
+  --dark-banner: #1a1a1a;      /* Nero per la navigazione */
+  --border-color: #8c6d3f;     /* Cuoio/Bronzo */
+  --box-bg: rgba(238, 222, 196, 0.7);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  font-family: 'IM Fell English', Georgia, serif;
+  font-size: 1.15rem;
+  line-height: 1.6;
+}
+
+/* --- BARRA DI NAVIGAZIONE --- */
+nav {
+  background-color: var(--dark-banner);
+  padding: 1rem;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+}
+
+nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+nav a {
+  color: var(--bg-color);
+  text-decoration: none;
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  transition: color 0.3s ease;
+}
+
+nav a:hover {
+  color: var(--primary-gold);
+}
+
+/* --- TUPOGRAFIA E TITOLI --- */
+h1, h2, h3, h4 {
+  font-family: 'Cinzel', serif;
+  color: var(--accent-red);
+  margin-top: 1.5rem;
+  margin-bottom: 0.75rem;
+  text-align: center;
+}
+
+h1 {
+  font-size: 2.2rem;
+  border-bottom: 2px solid var(--border-color);
+  padding-bottom: 0.5rem;
+}
+
+h2 {
+  font-size: 1.6rem;
+}
+
+a {
+  color: var(--accent-red);
+  text-decoration: none;
+  font-weight: bold;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* --- CONTENITORE PERGAMENA --- */
+.pergamena-container {
+  max-width: 900px;
+  margin: 2rem auto;
+  padding: 2.5rem;
+  background: var(--box-bg);
+  border: 2px solid var(--border-color);
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+}
+
+/* --- LISTE DIARIO & PAGINA HOME --- */
+ul {
+  line-height: 1.8;
+}
+
+/* --- SCHEDE PERSONAGGI (DRAMATIS PERSONAE) --- */
+.scheda-personaggio {
+  position: relative;
+}
+
+.personaggio-header {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.tipo-badge {
+  font-family: 'Cinzel', serif;
+  font-size: 1rem;
+  color: var(--border-color);
+  margin-top: -0.5rem;
+}
+
+.personaggio-body {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+  align-items: flex-start;
+  margin-bottom: 2rem;
+}
+
+.ritratto-container {
+  max-width: 280px;
+  width: 100%;
+}
+
+.ritratto-img {
+  width: 100%;
+  height: auto;
+  border: 3px solid var(--border-color);
+  border-radius: 6px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+}
+
+.statistiche-grid {
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.stat-box {
+  background: rgba(255, 255, 255, 0.5);
+  border: 1px solid var(--border-color);
+  padding: 0.75rem 1.25rem;
+  text-align: center;
+  border-radius: 4px;
+  min-width: 120px;
+}
+
+.stat-label {
+  display: block;
+  font-family: 'Cinzel', serif;
+  font-size: 0.85rem;
+  color: var(--accent-red);
+  font-weight: bold;
+}
+
+.stat-value {
+  font-family: 'Cinzel', serif;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--text-color);
+}
+
+hr {
+  border: 0;
+  height: 1px;
+  background: var(--border-color);
+  margin: 2rem 0;
+}
+
+/* --- HOMEPAGE PORTAL STYLES --- */
+.citazione-motto {
+  text-align: center;
+  font-style: italic;
+  color: var(--border-color);
+  margin-bottom: 1.5rem;
+}
+
+.sezioni-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.sezione-card {
+  background: rgba(255, 255, 255, 0.4);
+  border: 1px solid var(--border-color);
+  padding: 1.5rem;
+  border-radius: 4px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.sezione-card h2 {
+  margin-top: 0;
+  font-size: 1.3rem;
+  border-bottom: 1px dashed var(--border-color);
+  padding-bottom: 0.4rem;
+}
+
+.lista-breve {
+  padding-left: 1.2rem;
+  font-size: 0.95rem;
+}
+
+.cta-link {
+  margin-top: 1rem;
+  text-align: right;
+  font-weight: bold;
+}
+
+/* Adatta le immagini al contenitore e aggiunge cornice 3D */
+.pergamena-container img {
+  max-width: 100%;
+  height: auto;
+  border: 6px solid #4a2f1d;
+  border-radius: 4px;
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.6);
+  display: block;
+  margin: 2rem auto;
+}
+
+/* Adattamento automatico per schermi piccoli (Smartphone) */
+@media (max-width: 768px) {
+  .pergamena-container {
+    width: 95% !important; /* Occupa la larghezza dello schermo del telefono */
+    padding: 1rem !important; /* Riduce i margini interni troppo larghi */
+    margin: 1rem auto !important;
+  }
+  
+  /* Incolonna i dettagli del personaggio invece di tenerli affiancati */
+  .sezioni-grid,
+  .statistiche-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+}
+
+/* Stile per l'intestazione alta del sito */
+header {
+  /* SFUMATURA */
+  background-image: linear-gradient(to bottom, #750f08 0%, #3e0502 100%);
+  color: #f4e8d3; /* Colore del testo chiaro (pergamena) */
+  text-align: center;
+  padding: 2rem 1rem 1rem 1rem;
+  border-bottom: 3px solid #e2cc98;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.7);
+}
+
+header h1 {
+  font-size: 2.8rem;
+  margin: 0 0 0.5rem 0;
+  color: #e2cc98; /* Oro antico per la leggibilità */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.9); /* Ombra dietro il testo per farlo risaltare */
+}
+
+/* --- STILE FANTASY GENERALE --- */
+
+/* 1. Colore dell'inchiostro per il testo normale (marrone molto scuro, non nero) */
+body {
+  color: #2b1704; 
+}
+
+/* 2. Font epico per i titoli */
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Cinzel', serif; /* Cambia 'Cinzel' con 'MedievalSharp' se preferisci lo stile rustico */
+  color: #5c2018; /* Marrone rossiccio (sangue di drago) per far risaltare i titoli */
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+  font-weight: 800;
+  margin-bottom: 1rem;
+}
+
+/* 3. Colore dei link (per renderli in armonia con la pergamena) */
+a {
+  color: #632a15;
+  text-decoration-color: rgba(99, 42, 21, 0.4);
+}
+a:hover {
+  color: #8b1e04;
+  text-decoration-color: #8b1e04;
+}
+
+/* 4. Effetto pergamena più realistico */
+.pergamena-container {
+  /* Crea una sfumatura: chiaro al centro, bruciacchiato/scuro ai bordi */
+  background-image: radial-gradient(circle, #fbf4e6 40%, #e8d0a9 100%);
+  border: 2px solid #8b5a2b;
+  /* Aggiunge un'ombra esterna più profonda e un'ombra interna per simulare l'usura */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5), inset 0 0 40px rgba(139, 90, 43, 0.15);
+}
+
+
+/* ==========================================
+   STILE TESORI - MANUALE DEL GIOCATORE
+   ========================================== */
+
+.griglia-carte {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center; /* Centra le carte quando sono poche */
+  gap: 2.5rem;
+  margin-top: 2rem;
+}
+
+.carta-dnd {
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+  max-width: 420px; /* ECCO IL LIMITE DI LARGHEZZA! */
+  background: var(--box-bg);
+  border: 1px solid var(--border-color);
+  padding: 1.5rem;
+  border-radius: 6px;
+  box-shadow: 2px 4px 10px rgba(0,0,0,0.15);
+}
+
+.carta-titolo {
+  position: static; /* Annulla il posizionamento forzato di prima */
+  font-family: 'Cinzel', serif;
+  color: var(--accent-red);
+  font-size: 1.4rem;
+  font-weight: bold;
+  text-align: center;
+  margin-top: 0;
+  margin-bottom: 1rem;
+  border-bottom: 2px solid var(--border-color);
+  padding-bottom: 0.5rem;
+  text-transform: uppercase;
+}
+
+.carta-illustrazione {
+  position: static;
+  text-align: center;
+  margin: 1rem 0;
+}
+
+.carta-illustrazione img {
+  max-width: 180px; /* Dimensione controllata per non invadere la pagina */
+  height: auto;
+  border-radius: 4px;
+  /* LA MAGIA: Fonde lo sfondo bianco delle immagini esportate con il colore pergamena del sito! */
+  mix-blend-mode: multiply; 
+}
+
+.carta-tipo {
+  position: static;
+  text-align: center;
+  font-style: italic;
+  font-family: 'Cinzel', serif;
+  font-size: 0.95rem;
+  color: var(--border-color);
+  margin-bottom: 1.5rem;
+}
+
+.carta-descrizione {
+  position: static;
+  font-size: 1rem;
+  line-height: 1.6;
+  text-align: justify; /* Testo giustificato come nei veri manuali */
+  color: var(--text-color);
+  /* Niente più barre di scorrimento: la carta si allunga da sola in base al testo! */
+}
+
+.carta-descrizione p, 
+.carta-descrizione ul {
+  font-size: 1rem;
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+
+.carta-descrizione li {
+  margin-bottom: 0.5rem;
+}
+
+.linea-tesoro {
+  border: 0;
+  height: 2px;
+  background-color: var(--border-color); /* Riprende il colore bronzo/cuoio del tuo tema */
+  margin: 1rem auto;
+  width: 90%; /* Lascia un po' di respiro ai lati */
+}
+
+.sintonizzazione {
+  font-family: 'Georgia', serif;
+  font-size: 0.85rem;
+  color: var(--accent-red); /* Usa il rosso scuro per farlo risaltare delicatamente */
+  font-weight: normal;
+}

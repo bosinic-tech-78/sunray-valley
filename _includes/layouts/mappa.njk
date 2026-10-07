@@ -1,0 +1,33 @@
+---
+layout: layouts/base.njk
+---
+<div class="pergamena-container" style="text-align: center;">
+  <h1>{{ title }}</h1>
+  
+  {% if image %}
+    <div style="position: relative; display: inline-block; max-width: 100%; margin: 1rem 0;">
+      <!-- L'immagine della mappa -->
+      <a href="{{ image }}" target="_blank">
+        <img src="{{ image }}" alt="{{ title }}" style="width: 100%; max-width: 900px; border: 6px solid #4a2f1d; border-radius: 4px; box-shadow: 5px 5px 15px rgba(0,0,0,0.6); display: block;">
+      </a>
+      
+      <!-- I segnalini generati dal CMS -->
+      {% if segnalini %}
+        {% for pin in segnalini %}
+          <div title="{{ pin.nome }}" style="position: absolute; top: {{ pin.y }}%; left: {{ pin.x }}%; transform: translate(-50%, -50%); width: 18px; height: 18px; background-color: #d32f2f; border: 2px solid #fff; border-radius: 50%; cursor: pointer; box-shadow: 0 2px 5px rgba(0,0,0,0.8); z-index: 10;">
+          </div>
+        {% endfor %}
+      {% endif %}
+    </div>
+    
+    {% if segnalini %}
+      <p style="font-size: 0.9em; font-style: italic; color: #4a2f1d;">Passa il cursore sui pallini rossi per scoprire i luoghi</p>
+    {% else %}
+      <p style="font-size: 0.9em; font-style: italic;">Clicca sulla mappa per ingrandirla</p>
+    {% endif %}
+  {% endif %}
+  
+  <div class="testo-mappa" style="text-align: left; margin-top: 2rem;">
+    {{ content | safe }}
+  </div>
+</div>

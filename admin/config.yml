@@ -1,0 +1,364 @@
+# Decap CMS Configuration File
+
+# The backend option specifies how to access the content for your site
+backend:
+  name: github
+  repo: bosinic-tech-78/cronache-di-krynn  
+  branch: master
+
+# Uncomment below to enable drafts https://www.decapcms.org/docs/add-to-your-site/#editorial-workflow
+# publish_mode: editorial_workflow
+
+# Uncomment below to enable a link to your published site in the header bar of Decap CMS
+# site_url: https://eleventy-netlify-boilerplate.netlify.app/
+
+media_folder: "static/img" # Media files will be stored in the repo under images/uploads
+
+collections:
+  - name: "diario"
+    label: "Diario di Campagna"
+    folder: "src/diario"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - {label: "Titolo Capitolo", name: "title", widget: "string"}
+      - {label: "Data Sessione", name: "date", widget: "datetime"}
+      - {label: "Immagine di Copertina", name: "image", widget: "image", required: false}
+      - {label: "Riassunto degli Eventi", name: "body", widget: "markdown"}
+
+  - name: "personaggi"
+    label: "Dramatis Personae"
+    folder: "src/personaggi"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Nome Personaggio", name: "title", widget: "string" }
+      - { label: "Tipo (PG o PNG)", name: "tipo", widget: "select", options: ["PG", "PNG"] }
+      - { label: "Immagine (Ritratto)", name: "image", widget: "image", required: false }
+      
+      - label: "Informazioni Base"
+        name: "info_base"
+        widget: "object"
+        collapsed: true
+        fields:
+          - { label: "Nome Giocatore", name: "nome_giocatore", widget: "string", required: false }
+          - label: "Classi (Supporta il Multiclasse)"
+            name: "classi"
+            widget: "list"
+            collapsed: false
+            required: false
+            summary: '{{fields.nome}}{% if fields.livello %} (Liv. {{fields.livello}}){% endif %}'
+            fields:
+              - { label: "Nome Classe o Professione (es. Guerriero, Fabbro)", name: "nome", widget: "string" }
+              - { label: "Livello (Opzionale per PNG)", name: "livello", widget: "number", value_type: "int", required: false }
+          - { label: "Razza", name: "razza", widget: "string", required: false }
+          - { label: "Background", name: "background", widget: "string", required: false }
+          - { label: "Allineamento", name: "allineamento", widget: "string", required: false }
+          - { label: "Sesso", name: "sesso", widget: "string", required: false }
+          
+      - label: "Aspetto"
+        name: "aspetto"
+        widget: "object"
+        collapsed: true
+        fields:
+          - { label: "Età", name: "eta", widget: "string", required: false }
+          - { label: "Altezza", name: "altezza", widget: "string", required: false }
+          - { label: "Peso", name: "peso", widget: "string", required: false }
+          - { label: "Occhi", name: "occhi", widget: "string", required: false }
+          - { label: "Carnagione", name: "carnagione", widget: "string", required: false }
+          - { label: "Capelli", name: "capelli", widget: "string", required: false }
+
+      - label: "Caratteristiche e Modificatori"
+        name: "caratteristiche"
+        widget: "object"
+        collapsed: true
+        fields:
+          - { label: "Punteggio Forza", name: "forza", widget: "string", required: false }
+          - { label: "Modificatore Forza (es. +3)", name: "mod_forza", widget: "string", required: false }
+          - { label: "Punteggio Destrezza", name: "destrezza", widget: "string", required: false }
+          - { label: "Modificatore Destrezza (es. +2)", name: "mod_destrezza", widget: "string", required: false }
+          - { label: "Punteggio Costituzione", name: "costituzione", widget: "string", required: false }
+          - { label: "Modificatore Costituzione", name: "mod_costituzione", widget: "string", required: false }
+          - { label: "Punteggio Intelligenza", name: "intelligenza", widget: "string", required: false }
+          - { label: "Modificatore Intelligenza", name: "mod_intelligenza", widget: "string", required: false }
+          - { label: "Punteggio Saggezza", name: "saggezza", widget: "string", required: false }
+          - { label: "Modificatore Saggezza", name: "mod_saggezza", widget: "string", required: false }
+          - { label: "Punteggio Carisma", name: "carisma", widget: "string", required: false }
+          - { label: "Modificatore Carisma", name: "mod_carisma", widget: "string", required: false }
+
+      - label: "Statistiche di Combattimento"
+        name: "combattimento"
+        widget: "object"
+        collapsed: true
+        fields:
+          - { label: "Classe Armatura (CA)", name: "ca", widget: "number", required: false }
+          - { label: "Iniziativa", name: "iniziativa", widget: "string", required: false }
+          - { label: "Velocità", name: "velocita", widget: "string", required: false }
+          - { label: "Punti Ferita Massimi (PF)", name: "pf_max", widget: "number", required: false }
+          - { label: "Dadi Vita", name: "dadi_vita", widget: "string", required: false }
+          - { label: "Bonus di Competenza", name: "competenza", widget: "string", required: false }
+          - { label: "Percezione Passiva", name: "percezione_passiva", widget: "string", required: false }
+
+      - label: "Abilità con Competenza (Lista Strutturata)"
+        name: "abilita_lista"
+        widget: "list"
+        collapsed: true
+        required: false
+        summary: '{{fields.nome}}: {{fields.valore}}'
+        fields:
+          - { label: "Nome Abilità (es. Furtività)", name: "nome", widget: "string" }
+          - { label: "Bonus Totale (es. +5)", name: "valore", widget: "string" }
+
+      - label: "Altre Competenze e Lingue"
+        name: "competenze_lista"
+        widget: "list"
+        collapsed: true
+        required: false
+        summary: '{{fields.nome}}'
+        fields:
+          - { label: "Nome (es. Elfico, Strumenti da Scasso)", name: "nome", widget: "string" }
+          - { label: "Dettagli (Opzionale)", name: "dettagli", widget: "string", required: false }
+
+      - label: "Talenti (Feats)"
+        name: "talenti"
+        widget: "list"
+        collapsed: true
+        required: false
+        summary: '{{fields.nome}}'
+        fields:
+          - { label: "Nome Talento", name: "nome", widget: "string" }
+          - { label: "Descrizione", name: "descrizione", widget: "text", required: false }
+      
+      - label: "Attacchi e Armi"
+        name: "armi"
+        widget: "list"
+        collapsed: true
+        required: false
+        fields:
+          - { label: "Nome Arma", name: "nome", widget: "string" }
+          - { label: "Bonus Attacco", name: "bonus", widget: "string", required: false }
+          - { label: "Danni / Tipo", name: "danni", widget: "string", required: false }
+
+      - label: "Personalità e Tratti"
+        name: "personalita"
+        widget: "object"
+        collapsed: true
+        fields:
+          - { label: "Tratti Caratteriali", name: "tratti", widget: "text", required: false }
+          - { label: "Ideali", name: "ideali", widget: "text", required: false }
+          - { label: "Legami", name: "legami", widget: "text", required: false }
+          - { label: "Difetti", name: "difetti", widget: "text", required: false }
+
+      - label: "Privilegi di Classe e Razziali (Lista)"
+        name: "privilegi_lista"
+        widget: "list"
+        collapsed: true
+        required: false
+        summary: '{{fields.nome}}'
+        fields:
+          - { label: "Nome Privilegio", name: "nome", widget: "string" }
+          - { label: "Descrizione", name: "descrizione", widget: "text", required: false }
+      
+      - label: "Equipaggiamento e Monete (Lista)"
+        name: "equipaggiamento_lista"
+        widget: "list"
+        collapsed: true
+        required: false
+        summary: '{{fields.nome}} (x{{fields.quantita}})'
+        fields:
+          - { label: "Nome Oggetto o Monete", name: "nome", widget: "string" }
+          - { label: "Quantità", name: "quantita", widget: "number", value_type: "int", default: 1, required: false }
+          - { label: "Dettagli / Peso", name: "dettagli", widget: "string", required: false }
+
+      - label: "Incantesimi (Lista Strutturata)"
+        name: "incantesimi_lista"
+        widget: "list"
+        collapsed: true
+        required: false
+        summary: '{{fields.livello}}'
+        fields:
+          - { label: "Livello (es. Trucchetti, 1° Livello)", name: "livello", widget: "string" }
+          - { label: "Incantesimi Conosciuti", name: "lista", widget: "text", hint: "Scrivi gli incantesimi separati da virgola" }
+
+      - label: "Storia e Background Esteso"
+        name: "body"
+        widget: "markdown"
+        required: false
+      
+  - name: "mappe"
+    label: "Atlante & Mappe"
+    folder: "src/mappe"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - { label: "Titolo Mappa", name: "title", widget: "string" }
+      - { label: "Immagine Mappa", name: "image", widget: "image" }
+      
+      - label: "Segnalini Interattivi (Opzionale)"
+        name: "segnalini"
+        widget: "list"
+        collapsed: true
+        required: false
+        fields:
+          - { label: "Nome Luogo", name: "nome", widget: "string" }
+          - { label: "Posizione X (Orizzontale: da 0 a 100)", name: "x", widget: "number", value_type: "int" }
+          - { label: "Posizione Y (Verticale: da 0 a 100)", name: "y", widget: "number", value_type: "int" }
+          
+      - { label: "Descrizione o Storia", name: "body", widget: "markdown", required: false }
+      
+  - name: "master_trama"
+    label: "🔒 Trama Segreta"
+    folder: "src/master/trama"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Titolo o Capitolo", name: "title", widget: "string" }
+      - { label: "Ordine Nello Schema", name: "ordine", widget: "number", value_type: "int", default: 1, hint: "Usa i numeri (1, 2, 3...) per decidere la posizione" }
+      - { label: "Stato", name: "stato", widget: "select", options: ["Da Giocare", "In Corso", "Completata"] }
+      - label: "Incastri di Gioco (Relazioni)"
+        name: "incastri"
+        widget: "object"
+        collapsed: false
+        fields:
+          - { label: "Mostri o PNG Coinvolti", name: "png_rel", widget: "relation", collection: "master_png_mostri", search_fields: ["title"], value_field: "title", multiple: true, required: false }
+          - { label: "Luoghi da Esplorare", name: "luoghi_rel", widget: "relation", collection: "master_luoghi", search_fields: ["title"], value_field: "title", multiple: true, required: false }
+          - { label: "Tesori Presenti", name: "tesori_rel", widget: "relation", collection: "master_tesori", search_fields: ["title"], value_field: "title", multiple: true, required: false }
+          - { label: "Date ed Eventi Temporali", name: "calendario_rel", widget: "relation", collection: "master_calendario", search_fields: ["title", "data_krynn"], value_field: "title", multiple: true, required: false }
+      - { label: "Appunti Narrativi", name: "body", widget: "markdown" }
+
+  - name: "master_sessioni"
+    label: "🔒 Sessioni Segrete (Master)"
+    folder: "src/master/sessioni"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - { label: "Titolo Sessione o Scena", name: "title", widget: "string", hint: "Es: Scena 1 - L'imboscata" }
+      - { label: "Ordine Nello Schema", name: "ordine", widget: "number", value_type: "int", default: 1, hint: "Usa i numeri (1, 2, 3...) per decidere la posizione" }
+      - { label: "Stato", name: "stato", widget: "select", options: ["Da Giocare", "In Corso", "Completata"], default: "Da Giocare" }
+      - { label: "Data Giocata", name: "date", widget: "datetime", required: false }
+      - { label: "Capitolo di Riferimento", name: "trama_rel", widget: "relation", collection: "master_trama", search_fields: ["title"], value_field: "title", required: false, hint: "A quale macro-trama appartiene questa sessione/scena?" }
+      - label: "Incastri di Gioco"
+        name: "incastri"
+        widget: "object"
+        collapsed: true
+        fields:
+          - { label: "Mostri o PNG Incontrati", name: "png_rel", widget: "relation", collection: "master_png_mostri", search_fields: ["title"], value_field: "title", multiple: true, required: false }
+          - { label: "Luoghi Visitati", name: "luoghi_rel", widget: "relation", collection: "master_luoghi", search_fields: ["title"], value_field: "title", multiple: true, required: false }
+          - { label: "Tesori Assegnati", name: "tesori_rel", widget: "relation", collection: "master_tesori", search_fields: ["title"], value_field: "title", multiple: true, required: false }
+      - { label: "Appunti di Sessione / Scena", name: "body", widget: "markdown" }
+
+  - name: "master_png_mostri"
+    label: "🔒 Bestiario & PNG Segreti"
+    folder: "src/master/bestiario"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Nome Creatura/PNG", name: "title", widget: "string" }
+      - { label: "Immagine Ritratto (Opzionale)", name: "image", widget: "image", required: false }
+      - { label: "Taglia, Tipo e Allineamento", name: "tipo_allineamento", widget: "string", hint: "Es: Medium Elemental, Neutral" }
+      - { label: "Classe Armatura (CA)", name: "ca", widget: "string", hint: "Es: 16" }
+      - { label: "Punti Ferita (PF)", name: "hp", widget: "string", hint: "Es: 66 (12d8 + 12)" }
+      - { label: "Velocità", name: "velocita", widget: "string", hint: "Es: 20 ft., Fly 50 ft." }
+      - { label: "Iniziativa", name: "iniziativa", widget: "string", hint: "Es: +3 (13)" }
+      
+      - label: "Caratteristiche e Tiri Salvezza"
+        name: "stats"
+        widget: "object"
+        collapsed: true
+        fields:
+          - { label: "FOR (Punteggio, Mod, Salvezza)", name: "forza", widget: "string" }
+          - { label: "DES (Punteggio, Mod, Salvezza)", name: "destrezza", widget: "string" }
+          - { label: "COS (Punteggio, Mod, Salvezza)", name: "costituzione", widget: "string" }
+          - { label: "INT (Punteggio, Mod, Salvezza)", name: "intelligenza", widget: "string" }
+          - { label: "SAG (Punteggio, Mod, Salvezza)", name: "saggezza", widget: "string" }
+          - { label: "CAR (Punteggio, Mod, Salvezza)", name: "carisma", widget: "string" }
+
+      - label: "Resistenze, Immunità e Vulnerabilità"
+        name: "resistenze_immunita"
+        widget: "object"
+        collapsed: true
+        fields:
+          - { label: "Vulnerabilità ai Danni", name: "vulnerabilita", widget: "string", required: false, hint: "Es: Fuoco, Freddo" }
+          - { label: "Resistenze ai Danni", name: "resistenze", widget: "string", required: false, hint: "Es: Contundente, Perforante, Tagliente da armi non magiche" }
+          - { label: "Immunità ai Danni", name: "immunita_danni", widget: "string", required: false, hint: "Es: Veleno, Necrotico" }
+          - { label: "Immunità alle Condizioni", name: "immunita_condizioni", widget: "string", required: false, hint: "Es: Avvelenato, Affascinato, Spaventato" }
+
+      - label: "Competenze, Sensi e CR"
+        name: "competenze_base"
+        widget: "object"
+        collapsed: true
+        fields:
+          - { label: "Abilità (Skills)", name: "skills", widget: "string", required: false, hint: "Es: Arcana +3, Nature +5, Perception +7" }
+          - { label: "Sensi", name: "sensi", widget: "string", required: false, hint: "Es: Passive Perception 17" }
+          - { label: "Lingue", name: "lingue", widget: "string", required: false, hint: "Es: Aarakocra, Primordial (Auran)" }
+          - { label: "Grado di Sfida (CR)", name: "cr", widget: "string", required: false, hint: "Es: 4 (XP 1100; PB +2)" }
+
+      - label: "Tratti, Azioni e Reazioni"
+        name: "azioni_lista"
+        widget: "list"
+        collapsed: false
+        required: false
+        summary: '{{fields.tipo}}: {{fields.nome}}'
+        fields:
+          - { label: "Categoria", name: "tipo", widget: "select", options: ["Azione", "Azione Bonus", "Reazione", "Tratto", "Azione Leggendaria"] }
+          - { label: "Nome Azione/Tratto", name: "nome", widget: "string" }
+          - { label: "Descrizione Completa", name: "descrizione", widget: "text" }
+
+      - { label: "Habitat, Tattiche e Note Segrete", name: "body", widget: "markdown", required: false }
+
+  - name: "master_luoghi"
+    label: "🔒 Luoghi e Dungeon"
+    folder: "src/master/luoghi"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Nome Luogo", name: "title", widget: "string" }
+      - { label: "Immagine Ambientale (Opzionale)", name: "image", widget: "image", required: false }
+      - label: "Mappe e Planimetrie"
+        name: "mappe_lista"
+        widget: "list"
+        collapsed: true
+        required: false
+        summary: 'Mappa: {{fields.nome}}'
+        fields:
+          - { label: "Nome Mappa (es. Livello 1, Stanza del Boss)", name: "nome", widget: "string" }
+          - { label: "File Immagine", name: "file_mappa", widget: "image" }
+      - { label: "Descrizione per i Giocatori (Testo da leggere)", name: "box_text", widget: "text", required: false }
+      - { label: "Trappole, Segreti e Classi Difficoltà", name: "body", widget: "markdown" }
+
+  - name: "master_tesori"
+    label: "🔒 Tesori e Loot"
+    folder: "src/master/tesori"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Nome Oggetto", name: "title", widget: "string" }
+      - { label: "Immagine Oggetto (Opzionale)", name: "image", widget: "image", required: false }
+      - {label: "Rarità", name: "rarita", widget: "string"}
+      - {label: "Tipo Oggetto", name: "tipo", widget: "string"}
+      - { label: "Richiede Sintonizzazione?", name: "sintonizzazione", widget: "boolean", default: false }
+      - { label: "Statistiche ed Effetti Magici", name: "body", widget: "markdown" }
+      - { label: "Rendi Pubblico", name: "pubblicato", widget: "boolean", default: false, required: true, hint: "Attiva per mostrare questo oggetto nel Caveau pubblico dei giocatori" }
+      - { label: "Proprietario (Nome PG)", name: "proprietario", widget: "string", required: false, hint: "Inserisci il nome esatto del Personaggio (es. Tanis). Lascia vuoto se non è di nessuno."}
+
+  - name: "master_calendario"
+    label: "🔒 Calendario di Krynn"
+    folder: "src/master/calendario"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Nome dell'Evento", name: "title", widget: "string", hint: "Es: Caduta di Tarsis o Ritorno del Party a Kalaman" }
+      - { label: "Data (Calendario di Krynn)", name: "data_krynn", widget: "string", hint: "Es: 15 Corij, 352 AC" }
+      - { label: "Anno AC (per ordinamento cronologico)", name: "anno_ac", widget: "number", value_type: "int", hint: "Es: 352" }
+      - { label: "Tipologia Evento", name: "tipo", widget: "select", options: ["Evento Canonico (Lore)", "Impresa del Party", "Diceria / Evento Lontano"] }
+      
+      - label: "Collegamenti"
+        name: "collegamenti"
+        widget: "object"
+        collapsed: true
+        fields:
+          - { label: "Capitolo della Trama", name: "trama_rel", widget: "relation", collection: "master_trama", search_fields: ["title"], value_field: "title", required: false }
+          - { label: "Luogo", name: "luogo_rel", widget: "relation", collection: "master_luoghi", search_fields: ["title"], value_field: "title", required: false }
+          - { label: "PNG Coinvolti", name: "png_rel", widget: "relation", collection: "master_png_mostri", search_fields: ["title"], value_field: "title", multiple: true, required: false }
+                    
+      - { label: "Descrizione e Conseguenze", name: "body", widget: "markdown" }

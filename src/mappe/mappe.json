@@ -1,0 +1,5 @@
+{
+  "layout": "layouts/mappa.njk",
+  "tags": ["mappe"],
+  "permalink": "/mappe/{{ page.fileSlug }}/"
+}

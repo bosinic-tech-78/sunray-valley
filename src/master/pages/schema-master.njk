@@ -1,0 +1,68 @@
+---
+layout: layouts/base.njk
+permalink: /master/schema-segreto/
+title: "Schermo del Master: Trama"
+eleventyExcludeFromCollections: true
+---
+<div class="pergamena-container">
+  <div style="text-align: center; border-bottom: 2px solid #8b5a2b; padding-bottom: 1rem; margin-bottom: 2rem;">
+    <h1 style="margin-bottom: 0;">L'Arazzo del Fato</h1>
+    <p style="margin-top: 0.5rem; font-style: italic;">Schema ad albero delle Trame e delle Sessioni collegate.</p>
+  </div>
+
+  <!-- CICLO SULLE TRAME -->
+  {% for trama in collections.master_trama | sort(attribute="data.ordine") %}
+    <div style="margin-bottom: 2.5rem; background: rgba(255,255,255,0.4); padding: 1.5rem; border-radius: 8px; border-left: 5px solid #5c2018;">
+      
+      <h2 style="color: #5c2018; margin-top: 0; margin-bottom: 0.5rem; font-family: 'Cinzel', serif;">{{ trama.data.title }}</h2>
+      <p style="font-size: 0.9rem; font-style: italic; margin-bottom: 1rem;">Stato: <strong>{{ trama.data.stato }}</strong></p>
+
+      <ul style="list-style-type: none; padding-left: 0;">
+      <!-- CICLO SULLE SESSIONI CERCANDO QUELLE COLLEGATE -->
+      {% set ha_sessioni = false %}
+      {% for sessione in collections.master_sessioni | sort(attribute="data.ordine") %}
+        {% if sessione.data.trama_rel == trama.data.title %}
+          {% set ha_sessioni = true %}
+          <li style="margin-bottom: 0.8rem; padding-left: 1.5rem; position: relative;">
+            <span style="position: absolute; left: 0; color: #8b5a2b;">✦</span>
+            <strong>{{ sessione.data.title }}</strong> 
+            <span style="font-size: 0.85rem; background: var(--border-color); color: white; padding: 2px 6px; border-radius: 4px; margin-left: 10px;">
+              {{ sessione.data.stato }}
+            </span>
+          </li>
+        {% endif %}
+      {% endfor %}
+
+      {% if not ha_sessioni %}
+        <li style="padding-left: 1.5rem; color: #666; font-style: italic;">Nessuna sessione collegata a questa trama.</li>
+      {% endif %}
+      </ul>
+      
+    </div>
+  {% else %}
+    <p>Non hai ancora creato nessuna trama nel CMS.</p>
+  {% endfor %}
+
+
+  <!-- SEZIONE SESSIONI ORFANE (Senza trama assegnata) -->
+  <div style="margin-top: 4rem; border-top: 2px dashed #8b5a2b; padding-top: 2rem;">
+    <h3 style="color: #8b5a2b; margin-bottom: 1rem;">Sessioni Non Assegnate</h3>
+    <ul style="list-style-type: none; padding-left: 0;">
+    {% set ha_orfane = false %}
+    {% for sessione in collections.master_sessioni | sort(attribute="data.ordine") %}
+      {% if not sessione.data.trama_rel %}
+        {% set ha_orfane = true %}
+        <li style="margin-bottom: 0.5rem; padding-left: 1.5rem; position: relative;">
+          <span style="position: absolute; left: 0; color: #8b5a2b;">?</span>
+          <strong>{{ sessione.data.title }}</strong>
+        </li>
+      {% endif %}
+    {% endfor %}
+    
+    {% if not ha_orfane %}
+      <li style="padding-left: 1.5rem; color: #666; font-style: italic;">Tutte le sessioni sono assegnate a una trama. Ottimo lavoro!</li>
+    {% endif %}
+    </ul>
+  </div>
+
+</div>

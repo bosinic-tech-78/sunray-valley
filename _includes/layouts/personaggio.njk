@@ -1,0 +1,333 @@
+---
+layout: layouts/base.njk
+---
+<div class="pergamena-container">
+  <div style="text-align: center; border-bottom: 2px solid #8b5a2b; padding-bottom: 1rem; margin-bottom: 2rem;">
+    <h1 style="margin-bottom: 0;">{{ title }}</h1>
+    
+    {% if info_base.nome_giocatore %}
+      <p style="margin-top: 0.5rem; font-style: italic;">Giocato da: {{ info_base.nome_giocatore }}</p>
+    {% endif %}
+
+    <!-- Sottotitolo narrativo esclusivo per i PNG -->
+    {% if tipo == "PNG" %}
+      <p style="margin-top: 0.5rem; font-size: 1.2rem; color: #5c2018; font-style: italic; font-family: 'Georgia', serif;">
+        {% if info_base.razza %}{{ info_base.razza }}{% endif %}
+        {% if info_base.razza and info_base.classi %} | {% endif %}
+        {% if info_base.classi %}
+          {% for c in info_base.classi %}
+            {{ c.nome }}{% if not loop.last %} / {% endif %}
+          {% endfor %}
+        {% endif %}
+      </p>
+    {% endif %}
+  </div>
+
+  <!-- INIZIO DEL BLOCCO NASCOSTO AI PNG -->
+  {% if tipo != "PNG" %}
+
+  <div style="display: flex; flex-wrap: wrap; gap: 1rem; margin-bottom: 2rem; background: rgba(255,255,255,0.4); padding: 1rem; border-radius: 8px;">
+    <div style="flex: 1; min-width: 200px;">
+      <strong>Razza:</strong> {{ info_base.razza }}<br>
+      <strong>Classe:</strong> 
+      {% if info_base.classi %}
+        {% for c in info_base.classi %}
+          {{ c.nome }} (Liv. {{ c.livello }}){% if not loop.last %} / {% endif %}
+        {% endfor %}
+      {% else %}
+        {{ info_base.classe }}
+      {% endif %}
+      <br>
+      {% if not info_base.classi %}
+        <strong>Livello:</strong> {{ info_base.livello }}<br>
+      {% endif %}
+      <strong>Background:</strong> {{ info_base.background }}
+    </div>
+    <div style="flex: 1; min-width: 200px;">
+      <strong>Allineamento:</strong> {{ info_base.allineamento }}<br>
+      <strong>Sesso:</strong> {{ info_base.sesso }}<br>
+      <strong>Età:</strong> {{ aspetto.eta }}
+    </div>
+  </div>
+
+  <!-- CARATTERISTICHE E MODIFICATORI (Stile D&D 5e) -->
+  <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(90px, 1fr)); gap: 1rem; background: #3e2723; padding: 1.5rem 1rem; border-radius: 8px; border: 2px solid #8b5a2b; box-shadow: 0 4px 10px rgba(0,0,0,0.4); margin-bottom: 3.5rem;">
+    
+    <!-- FOR -->
+    <div style="display: flex; flex-direction: column; align-items: center; position: relative;">
+      <div style="font-family: 'Cinzel', serif; font-size: 1.2rem; font-weight: bold; color: #e2cc98; margin-bottom: 0.5rem;">FOR</div>
+      <div style="background: rgba(255,255,255,0.1); border: 1px solid rgba(226, 204, 152, 0.4); border-radius: 8px; width: 100%; max-width: 80px; padding: 0.8rem 0; text-align: center;">
+        <span style="font-size: 1.8rem; font-weight: bold; color: #fff; line-height: 1;">{{ caratteristiche.mod_forza | default("0") }}</span>
+      </div>
+      <div style="background: #e2cc98; color: #3e2723; font-weight: bold; border-radius: 50%; width: 32px; height: 32px; display: flex; justify-content: center; align-items: center; position: absolute; bottom: -16px; border: 2px solid #3e2723; font-size: 0.95rem; box-shadow: 0 2px 4px rgba(0,0,0,0.5);">
+        {{ caratteristiche.forza | default("-") }}
+      </div>
+    </div>
+
+    <!-- DES -->
+    <div style="display: flex; flex-direction: column; align-items: center; position: relative;">
+      <div style="font-family: 'Cinzel', serif; font-size: 1.2rem; font-weight: bold; color: #e2cc98; margin-bottom: 0.5rem;">DES</div>
+      <div style="background: rgba(255,255,255,0.1); border: 1px solid rgba(226, 204, 152, 0.4); border-radius: 8px; width: 100%; max-width: 80px; padding: 0.8rem 0; text-align: center;">
+        <span style="font-size: 1.8rem; font-weight: bold; color: #fff; line-height: 1;">{{ caratteristiche.mod_destrezza | default("0") }}</span>
+      </div>
+      <div style="background: #e2cc98; color: #3e2723; font-weight: bold; border-radius: 50%; width: 32px; height: 32px; display: flex; justify-content: center; align-items: center; position: absolute; bottom: -16px; border: 2px solid #3e2723; font-size: 0.95rem; box-shadow: 0 2px 4px rgba(0,0,0,0.5);">
+        {{ caratteristiche.destrezza | default("-") }}
+      </div>
+    </div>
+    
+    <!-- COS -->
+    <div style="display: flex; flex-direction: column; align-items: center; position: relative;">
+      <div style="font-family: 'Cinzel', serif; font-size: 1.2rem; font-weight: bold; color: #e2cc98; margin-bottom: 0.5rem;">COS</div>
+      <div style="background: rgba(255,255,255,0.1); border: 1px solid rgba(226, 204, 152, 0.4); border-radius: 8px; width: 100%; max-width: 80px; padding: 0.8rem 0; text-align: center;">
+        <span style="font-size: 1.8rem; font-weight: bold; color: #fff; line-height: 1;">{{ caratteristiche.mod_costituzione | default("0") }}</span>
+      </div>
+      <div style="background: #e2cc98; color: #3e2723; font-weight: bold; border-radius: 50%; width: 32px; height: 32px; display: flex; justify-content: center; align-items: center; position: absolute; bottom: -16px; border: 2px solid #3e2723; font-size: 0.95rem; box-shadow: 0 2px 4px rgba(0,0,0,0.5);">
+        {{ caratteristiche.costituzione | default("-") }}
+      </div>
+    </div>
+
+    <!-- INT -->
+    <div style="display: flex; flex-direction: column; align-items: center; position: relative;">
+      <div style="font-family: 'Cinzel', serif; font-size: 1.2rem; font-weight: bold; color: #e2cc98; margin-bottom: 0.5rem;">INT</div>
+      <div style="background: rgba(255,255,255,0.1); border: 1px solid rgba(226, 204, 152, 0.4); border-radius: 8px; width: 100%; max-width: 80px; padding: 0.8rem 0; text-align: center;">
+        <span style="font-size: 1.8rem; font-weight: bold; color: #fff; line-height: 1;">{{ caratteristiche.mod_intelligenza | default("0") }}</span>
+      </div>
+      <div style="background: #e2cc98; color: #3e2723; font-weight: bold; border-radius: 50%; width: 32px; height: 32px; display: flex; justify-content: center; align-items: center; position: absolute; bottom: -16px; border: 2px solid #3e2723; font-size: 0.95rem; box-shadow: 0 2px 4px rgba(0,0,0,0.5);">
+        {{ caratteristiche.intelligenza | default("-") }}
+      </div>
+    </div>
+
+    <!-- SAG -->
+    <div style="display: flex; flex-direction: column; align-items: center; position: relative;">
+      <div style="font-family: 'Cinzel', serif; font-size: 1.2rem; font-weight: bold; color: #e2cc98; margin-bottom: 0.5rem;">SAG</div>
+      <div style="background: rgba(255,255,255,0.1); border: 1px solid rgba(226, 204, 152, 0.4); border-radius: 8px; width: 100%; max-width: 80px; padding: 0.8rem 0; text-align: center;">
+        <span style="font-size: 1.8rem; font-weight: bold; color: #fff; line-height: 1;">{{ caratteristiche.mod_saggezza | default("0") }}</span>
+      </div>
+      <div style="background: #e2cc98; color: #3e2723; font-weight: bold; border-radius: 50%; width: 32px; height: 32px; display: flex; justify-content: center; align-items: center; position: absolute; bottom: -16px; border: 2px solid #3e2723; font-size: 0.95rem; box-shadow: 0 2px 4px rgba(0,0,0,0.5);">
+        {{ caratteristiche.saggezza | default("-") }}
+      </div>
+    </div>
+
+    <!-- CAR -->
+    <div style="display: flex; flex-direction: column; align-items: center; position: relative;">
+      <div style="font-family: 'Cinzel', serif; font-size: 1.2rem; font-weight: bold; color: #e2cc98; margin-bottom: 0.5rem;">CAR</div>
+      <div style="background: rgba(255,255,255,0.1); border: 1px solid rgba(226, 204, 152, 0.4); border-radius: 8px; width: 100%; max-width: 80px; padding: 0.8rem 0; text-align: center;">
+        <span style="font-size: 1.8rem; font-weight: bold; color: #fff; line-height: 1;">{{ caratteristiche.mod_carisma | default("0") }}</span>
+      </div>
+      <div style="background: #e2cc98; color: #3e2723; font-weight: bold; border-radius: 50%; width: 32px; height: 32px; display: flex; justify-content: center; align-items: center; position: absolute; bottom: -16px; border: 2px solid #3e2723; font-size: 0.95rem; box-shadow: 0 2px 4px rgba(0,0,0,0.5);">
+        {{ caratteristiche.carisma | default("-") }}
+      </div>
+    </div>
+    
+  </div>
+
+  <!-- COMBATTIMENTO E STATISTICHE -->
+  <div style="display: flex; flex-wrap: wrap; gap: 1rem; justify-content: center; margin-bottom: 3rem; font-family: 'Georgia', serif;">
+    
+    <div style="background: rgba(255,255,255,0.7); border: 1px solid #8b5a2b; border-radius: 8px; padding: 0.5rem 1.2rem; box-shadow: 2px 2px 6px rgba(0,0,0,0.15); display: flex; align-items: center; gap: 0.8rem; min-width: 140px; justify-content: center;">
+      <span style="font-size: 1.5rem;">🛡️</span> 
+      <div style="display: flex; flex-direction: column; line-height: 1.1; text-align: left;">
+        <span style="font-size: 0.75rem; text-transform: uppercase; color: #5c2018; font-weight: bold;">CA</span>
+        <span style="font-size: 1.4rem; font-weight: bold; color: #2b1704;">{{ combattimento.ca }}</span>
+      </div>
+    </div>
+
+    <div style="background: rgba(255,255,255,0.7); border: 1px solid #8b5a2b; border-radius: 8px; padding: 0.5rem 1.2rem; box-shadow: 2px 2px 6px rgba(0,0,0,0.15); display: flex; align-items: center; gap: 0.8rem; min-width: 140px; justify-content: center;">
+      <span style="font-size: 1.5rem;">❤️</span> 
+      <div style="display: flex; flex-direction: column; line-height: 1.1; text-align: left;">
+        <span style="font-size: 0.75rem; text-transform: uppercase; color: #5c2018; font-weight: bold;">PF</span>
+        <span style="font-size: 1.4rem; font-weight: bold; color: #2b1704;">{{ combattimento.pf_max }}</span>
+      </div>
+    </div>
+
+    <div style="background: rgba(255,255,255,0.7); border: 1px solid #8b5a2b; border-radius: 8px; padding: 0.5rem 1.2rem; box-shadow: 2px 2px 6px rgba(0,0,0,0.15); display: flex; align-items: center; gap: 0.8rem; min-width: 140px; justify-content: center;">
+      <span style="font-size: 1.5rem;">⚡</span> 
+      <div style="display: flex; flex-direction: column; line-height: 1.1; text-align: left;">
+        <span style="font-size: 0.75rem; text-transform: uppercase; color: #5c2018; font-weight: bold;">Iniziativa</span>
+        <span style="font-size: 1.4rem; font-weight: bold; color: #2b1704;">{{ combattimento.iniziativa }}</span>
+      </div>
+    </div>
+
+    <div style="background: rgba(255,255,255,0.7); border: 1px solid #8b5a2b; border-radius: 8px; padding: 0.5rem 1.2rem; box-shadow: 2px 2px 6px rgba(0,0,0,0.15); display: flex; align-items: center; gap: 0.8rem; min-width: 140px; justify-content: center;">
+      <span style="font-size: 1.5rem;">🏃</span> 
+      <div style="display: flex; flex-direction: column; line-height: 1.1; text-align: left;">
+        <span style="font-size: 0.75rem; text-transform: uppercase; color: #5c2018; font-weight: bold;">Velocità</span>
+        <span style="font-size: 1.4rem; font-weight: bold; color: #2b1704;">{{ combattimento.velocita }}</span>
+      </div>
+    </div>
+
+    {% if combattimento.competenza %}
+    <div style="background: rgba(255,255,255,0.7); border: 1px solid #8b5a2b; border-radius: 8px; padding: 0.5rem 1.2rem; box-shadow: 2px 2px 6px rgba(0,0,0,0.15); display: flex; align-items: center; gap: 0.8rem; min-width: 140px; justify-content: center;">
+      <span style="font-size: 1.5rem;">⭐</span> 
+      <div style="display: flex; flex-direction: column; line-height: 1.1; text-align: left;">
+        <span style="font-size: 0.75rem; text-transform: uppercase; color: #5c2018; font-weight: bold;">Competenza</span>
+        <span style="font-size: 1.4rem; font-weight: bold; color: #2b1704;">{{ combattimento.competenza }}</span>
+      </div>
+    </div>
+    {% endif %}
+
+  </div>
+
+  <hr style="border-top: 2px solid #8b5a2b; margin-bottom: 2rem;">
+
+  <!-- ARMI E ATTACCHI -->
+  {% if armi.length > 0 %}
+    <h3 style="color: #5c2018; margin-bottom: 1rem; text-transform: uppercase; font-size: 1.3rem;">⚔️ Attacchi e Armi</h3>
+    <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 1rem; margin-bottom: 2.5rem;">
+      {% for arma in armi %}
+        <div style="background: rgba(255,255,255,0.6); border: 1px solid #8b5a2b; border-radius: 6px; padding: 0.8rem; box-shadow: 2px 2px 5px rgba(0,0,0,0.1);">
+          <div style="font-weight: bold; color: #5c2018; font-size: 1.1rem; border-bottom: 1px dashed #8b5a2b; margin-bottom: 0.5rem; padding-bottom: 0.3rem;">{{ arma.nome }}</div>
+          <div style="display: flex; justify-content: space-between; font-family: 'Georgia', serif; font-size: 0.95rem;">
+            <span><strong style="color: #2b1704;">TxC:</strong> {{ arma.bonus }}</span>
+            <span><strong style="color: #2b1704;">Danni:</strong> {{ arma.danni }}</span>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  {% endif %}
+
+  <!-- ABILITÀ -->
+  {% if abilita_lista.length > 0 %}
+    <h3 style="color: #5c2018; margin-bottom: 1rem; text-transform: uppercase; font-size: 1.3rem;">🎯 Abilità</h3>
+    <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 0.5rem; margin-bottom: 2.5rem; font-family: 'Georgia', serif;">
+      {% for ab in abilita_lista %}
+        <div style="display: flex; justify-content: space-between; align-items: center; background: rgba(255,255,255,0.4); border-bottom: 1px solid rgba(139, 90, 43, 0.3); padding: 0.4rem 0.8rem; border-radius: 4px;">
+          <span style="font-size: 0.95rem;">{{ ab.nome }}</span>
+          <strong style="font-size: 1.1rem; color: #5c2018;">{{ ab.valore }}</strong>
+        </div>
+      {% endfor %}
+    </div>
+  {% endif %}
+
+  <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin-bottom: 2.5rem;">
+    
+    <!-- COMPETENZE E LINGUE -->
+    {% if competenze_lista.length > 0 %}
+      <div>
+        <h3 style="color: #5c2018; margin-bottom: 1rem; text-transform: uppercase; font-size: 1.2rem; border-bottom: 1px solid #8b5a2b; padding-bottom: 0.3rem;">🗣️ Competenze e Lingue</h3>
+        <ul style="padding-left: 1.2rem; line-height: 1.6;">
+          {% for comp in competenze_lista %}
+            <li style="margin-bottom: 0.4rem;">
+              <strong style="color: #2b1704;">{{ comp.nome }}</strong>{% if comp.dettagli %} <span style="font-style: italic; font-size: 0.9rem;">- {{ comp.dettagli }}</span>{% endif %}
+            </li>
+          {% endfor %}
+        </ul>
+      </div>
+    {% endif %}
+
+    <!-- EQUIPAGGIAMENTO -->
+    {% if equipaggiamento_lista.length > 0 %}
+      <div>
+        <h3 style="color: #5c2018; margin-bottom: 1rem; text-transform: uppercase; font-size: 1.2rem; border-bottom: 1px solid #8b5a2b; padding-bottom: 0.3rem;">🎒 Equipaggiamento</h3>
+        <ul style="padding-left: 1.2rem; line-height: 1.6;">
+          {% for eq in equipaggiamento_lista %}
+            <li style="margin-bottom: 0.4rem;">
+              <strong style="color: #2b1704;">{{ eq.nome }}</strong> {% if eq.quantita %}<span style="color: #5c2018; font-weight: bold;">(x{{ eq.quantita }})</span>{% endif %}
+              {% if eq.dettagli %}<div style="font-size: 0.85rem; font-style: italic; color: #555; line-height: 1.3;">{{ eq.dettagli }}</div>{% endif %}
+            </li>
+          {% endfor %}
+        </ul>
+      </div>
+    {% endif %}
+
+  </div>
+
+  <!-- PRIVILEGI E TALENTI -->
+  {% if privilegi_lista.length > 0 or talenti.length > 0 %}
+    <h3 style="color: #5c2018; margin-bottom: 1rem; text-transform: uppercase; font-size: 1.3rem;">📜 Privilegi e Talenti</h3>
+    <div style="background: rgba(255,255,255,0.4); border: 1px solid #8b5a2b; border-radius: 6px; padding: 1.5rem; margin-bottom: 2.5rem; box-shadow: inset 0 0 10px rgba(139, 90, 43, 0.1);">
+      
+      {% if talenti.length > 0 %}
+        <div style="margin-bottom: {% if privilegi_lista.length > 0 %}1.5rem{% else %}0{% endif %};">
+          {% for talento in talenti %}
+            <div style="margin-bottom: 1rem;">
+              <strong style="color: #5c2018; font-size: 1.1rem; display: block; margin-bottom: 0.2rem;">{{ talento.nome }} (Talento)</strong>
+              {% if talento.descrizione %}<div style="font-size: 0.95rem; line-height: 1.5; text-align: justify;">{{ talento.descrizione }}</div>{% endif %}
+            </div>
+          {% endfor %}
+        </div>
+      {% endif %}
+
+      {% if privilegi_lista.length > 0 %}
+        <div>
+          {% for priv in privilegi_lista %}
+            <div style="margin-bottom: 1rem;">
+              <strong style="color: #2b1704; font-size: 1.05rem; display: block; margin-bottom: 0.2rem;">{{ priv.nome }}</strong>
+              {% if priv.descrizione %}<div style="font-size: 0.95rem; line-height: 1.5; text-align: justify;">{{ priv.descrizione }}</div>{% endif %}
+            </div>
+          {% endfor %}
+        </div>
+      {% endif %}
+      
+    </div>
+  {% endif %}
+
+  <!-- INCANTESIMI -->
+  {% if incantesimi_lista.length > 0 %}
+    <h3 style="color: #5c2018; margin-bottom: 1rem; text-transform: uppercase; font-size: 1.3rem;">✨ Grimorio degli Incantesimi</h3>
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1rem; margin-bottom: 3rem;">
+      {% for inc in incantesimi_lista %}
+        <div style="background: rgba(255,255,255,0.7); border-left: 4px solid #5c2018; padding: 0.8rem 1.2rem; box-shadow: 2px 2px 6px rgba(0,0,0,0.1);">
+          <div style="font-family: 'Cinzel', serif; font-weight: bold; color: #5c2018; text-transform: uppercase; font-size: 0.9rem; letter-spacing: 1px; margin-bottom: 0.5rem; border-bottom: 1px solid rgba(139, 90, 43, 0.3); padding-bottom: 0.2rem;">
+            {{ inc.livello }}
+          </div>
+          <div style="font-size: 0.95rem; line-height: 1.6; font-family: 'Georgia', serif; text-align: justify;">
+            {{ inc.lista }}
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  {% endif %}
+
+<!-- TESORI E OGGETTI MAGICI -->
+  {% set possiede_tesori = false %}
+  
+  {# Primo ciclo veloce per capire se il PG ha almeno un tesoro (serve per non stampare titoli a vuoto) #}
+  {% for tesoro in collections.master_tesori %}
+    {% if tesoro.data.pubblicato and tesoro.data.proprietario == title %}
+      {% set possiede_tesori = true %}
+    {% endif %}
+  {% endfor %}
+
+  {% if possiede_tesori %}
+    <h3 style="margin-top: 1.5rem; border-bottom: 2px solid var(--border-color, #8b5a2b); padding-bottom: 0.5rem; color: var(--accent-red, #8b0000);">
+      Oggetti Magici del Caveau
+    </h3>
+    
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; margin-bottom: 2rem;">
+      {% for tesoro in collections.master_tesori %}
+        {% if tesoro.data.pubblicato and tesoro.data.proprietario == title %}
+          
+          <div style="background: rgba(255,255,255,0.6); border: 1px solid #8c6d3f; padding: 1rem; border-radius: 6px; box-shadow: 2px 2px 8px rgba(0,0,0,0.1);">
+            <h4 style="margin: 0 0 0.5rem 0; font-size: 1.1rem; color: #58180D; border: none; text-align: left;">
+              {{ tesoro.data.title }}
+            </h4>
+            
+            {% if tesoro.data.image %}
+              <img src="{{ tesoro.data.image }}" alt="{{ tesoro.data.title }}" style="max-width: 90px; float: right; margin-left: 1rem; margin-bottom: 0.5rem; mix-blend-mode: multiply; border: none; box-shadow: none;">
+            {% endif %}
+            
+            <div style="font-size: 0.85rem; font-style: italic; color: #333; margin-bottom: 0.8rem;">
+              {{ tesoro.data.tipo }}, {{ tesoro.data.rarita }}
+              {% if tesoro.data.sintonizzazione %}<br><span style="color: #8b0000;">(Richiede Sintonizzazione)</span>{% endif %}
+            </div>
+            
+            <div style="font-size: 0.85rem; line-height: 1.4; text-align: justify;">
+              {{ tesoro.templateContent | safe }}
+            </div>
+            
+            <div style="clear: both;"></div>
+          </div>
+          
+        {% endif %}
+      {% endfor %}
+    </div>
+  {% endif %}
+
+{% endif %}
+
+  <!-- STORIA / BACKGROUND ESTESO (Il testo libero in fondo al CMS) -->
+  <div class="testo-personaggio" style="margin-top: 2.5rem; border-top: 2px solid #8b5a2b; padding-top: 1.5rem;">
+    {{ content | safe }}
+  </div>
+</div>
