@@ -5,9 +5,7 @@ stato: Da Giocare
 incastri:
   png_rel: []
   luoghi_rel: []
-  tesori_rel:
-    - Mantello della Resistenza agli Incantesimi
-    - Verga del Patto del Custode
+  tesori_rel: []
   calendario_rel: []
 ---
 
