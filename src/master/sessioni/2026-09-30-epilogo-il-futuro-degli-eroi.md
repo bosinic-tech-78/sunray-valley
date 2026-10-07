@@ -3,7 +3,7 @@ title: Epilogo - Il Futuro degli Eroi
 ordine: 1
 stato: Da Giocare
 date: ''
-trama_rel: Epilogo - La Caduta dell'Impero del Drago
+trama_rel: ''
 incastri:
   png_rel: []
   luoghi_rel: []

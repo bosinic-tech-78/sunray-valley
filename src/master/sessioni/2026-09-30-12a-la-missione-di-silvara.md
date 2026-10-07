@@ -3,7 +3,7 @@ title: 12.a - La Missione di Silvara
 ordine: 1
 stato: Da Giocare
 date: ''
-trama_rel: Capitolo 12 - Il Tradimento del Giuramento (Livello 16 -> 17)
+trama_rel: ''
 incastri:
   png_rel: []
   luoghi_rel: []

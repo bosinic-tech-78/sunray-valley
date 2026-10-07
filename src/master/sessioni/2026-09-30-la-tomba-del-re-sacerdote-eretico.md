@@ -3,7 +3,7 @@ title: 11.d - La Tomba del Re-Sacerdote Eretico
 ordine: 4
 stato: Da Giocare
 date: ''
-trama_rel: Capitolo 11 - La Ricerca delle Dragonlance (Livello 14 -> 16)
+trama_rel: ''
 incastri:
   png_rel: []
   luoghi_rel: []
