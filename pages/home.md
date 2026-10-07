@@ -6,7 +6,7 @@ templateEngineOverride: njk
 ---
 <div class="pergamena-container home-portal">
   <header class="home-intro">
-    <img src="/static/img/Gemini_Generated_Image_Dragonlance.jpg" alt="Logo Dragonlance" style="width: 100%; max-width: 800px; height: auto; display: block; margin: 0 auto 1.5rem auto; border-radius: 4px; box-shadow: 0 4px 8px rgba(0,0,0,0.5);">
+    <img src="/static/img/Gemini_Generated_Image_Sunray_Valley.jpg" alt="Logo Sunray Valley" style="width: 100%; max-width: 800px; height: auto; display: block; margin: 0 auto 1.5rem auto; border-radius: 4px; box-shadow: 0 4px 8px rgba(0,0,0,0.5);">
     <p class="citazione-motto"><em>"I veri eroi non nascono dalla gloria, ma dalla necessità di proteggere ciò che amano."</em></p>
     <p>Benvenuti nell'archivio della campagna. Attraverso queste pergamene potrete consultare le gesta dei compagni, conoscere gli alleati e i nemici incontrati lungo il cammino, e consultare la cartografia delle terre di Ansalon.</p>
   </header>
