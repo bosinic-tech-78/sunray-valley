@@ -1,6 +1,6 @@
 ---
 title: Il Santuario del Conflusso
-image: ''
+image: /static/img/Gemini_Generated_Image_5jzs5q5jzs5q5jzs.jpg
 mappe_lista: []
 box_text: ''
 ---
