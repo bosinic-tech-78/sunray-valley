@@ -1,5 +1,5 @@
 ---
-title: Prologo - Il Sonnambulismo Mistico (Il Richiamo del Sangue)
+title: Capitolo 00 - Il Sonnambulismo Mistico (Il Richiamo del Sangue)
 ordine: 1
 stato: Da Giocare
 incastri:
