@@ -1,7 +1,7 @@
 ---
 title: La Fondazione
 data_krynn: Circa 3000 PF
-anno_ac: 1
+anno_ac: -3000
 tipo: Diceria / Evento Lontano
 collegamenti:
   trama_rel: ''
