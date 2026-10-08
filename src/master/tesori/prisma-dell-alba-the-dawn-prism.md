@@ -1,8 +1,8 @@
 ---
 title: Prisma dell'Alba (The Dawn Prism)
 image: /static/img/Screenshot 2026-10-08 113025.png
-rarita: Leggendario
-tipo: Oggetto
+rarita: Artefatto
+tipo: Oggetto meraviglioso
 sintonizzazione: true
 pubblicato: false
 proprietario: ''
