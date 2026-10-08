@@ -1,7 +1,7 @@
 ---
 title: '"Età dell''Oro"'
 data_krynn: Circa 2500 PF - 1 PF
-anno_ac: 1
+anno_ac: 2
 tipo: Diceria / Evento Lontano
 collegamenti:
   trama_rel: ''
