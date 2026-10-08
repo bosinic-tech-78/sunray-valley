@@ -348,8 +348,8 @@ collections:
     slug: "{{slug}}"
     fields:
       - { label: "Nome dell'Evento", name: "title", widget: "string", hint: "Es: Caduta di Tarsis o Ritorno del Party a Kalaman" }
-      - { label: "Data (Calendario di Krynn)", name: "data_krynn", widget: "string", hint: "Es: 15 Corij, 352 AC" }
-      - { label: "Anno AC (per ordinamento cronologico)", name: "anno_ac", widget: "number", value_type: "int", hint: "Es: 352" }
+      - { label: "Data (Calendario di Sunray)", name: "data_krynn", widget: "string", hint: "Es: 15 Febbraio, 352 AF" }
+      - { label: "Anno AF (per ordinamento cronologico)", name: "anno_ac", widget: "number", value_type: "int", hint: "Es: 352" }
       - { label: "Tipologia Evento", name: "tipo", widget: "select", options: ["Evento Canonico (Lore)", "Impresa del Party", "Diceria / Evento Lontano"] }
       
       - label: "Collegamenti"
