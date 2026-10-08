@@ -3,10 +3,13 @@ title: Capitolo 00 - Il Sonnambulismo Mistico (Il Richiamo del Sangue)
 ordine: 1
 stato: Da Giocare
 incastri:
-  png_rel: []
-  luoghi_rel: []
+  png_rel:
+    - Flagello di Vite
+  luoghi_rel:
+    - Il Santuario del Conflusso
   tesori_rel: []
-  calendario_rel: []
+  calendario_rel:
+    - L'Era Attuale
 ---
 
 I PG, pur dormendo in luoghi diversi, condividono lo stesso sogno vivido di un'alba accecante. Si svegliano in piena notte, in stato di trance, e camminano guidati dall'istinto verso le stesse rovine isolate. Quando riprendono pienamente coscienza, si ritrovano faccia a faccia, perfetti sconosciuti di razze rivali, riuniti attorno al frammento del cristallo pulsante.
