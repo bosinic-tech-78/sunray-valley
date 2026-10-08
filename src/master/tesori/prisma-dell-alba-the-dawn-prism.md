@@ -17,3 +17,8 @@ Inserendo questo evento nell'epoca della **Fondazione (circa 3000 PF)**, la crea
 - **Gli Umani (La Scintilla):** Con la loro natura vibrante e la loro incrollabile determinazione, i primi campioni umani fecero da "catalizzatori". All'alba del solstizio, incanalarono fisicamente il primo raggio di sole all'interno del cristallo a costo della loro stessa energia vitale, innescando per sempre l'artefatto.
 
 Dalla fusione di questi tre doni nacque **Il Prisma dell'Alba**. Per custodire questo capolavoro condiviso, i rappresentanti delle tre razze giurarono di proteggerlo insieme, fondando così l'Accademia del Raggio di Sole (_Sunward Vanguard_).
+
+
+
+
+**La Ricomposizione:** Ogni volta che i PG troveranno un nuovo pezzo, il rituale si ripeterà. Il nuovo frammento si dissolverà e il tatuaggio si espanderà sul dorso della mano e lungo l'avambraccio, componendo il puzzle. La promessa tacita è che solo quando il disegno sarà completo, la magia raggiungerà la massa critica e invertirà il processo, "espellendo" dai loro corpi l'energia per materializzare il Prisma dell'Alba integro e riforgiato.
