@@ -1,6 +1,6 @@
 ---
-title: Capitolo 08 - Maelgoth e il Drago Malvagio (Livello 11 -> 12)
-ordine: 8
+title: Prologo - Il Sonnambulismo Mistico (Il Richiamo del Sangue)
+ordine: 1
 stato: Da Giocare
 incastri:
   png_rel: []
@@ -9,55 +9,28 @@ incastri:
   calendario_rel: []
 ---
 
-**L'influenza su Lord Heltann:** Lord Heltann è manipolato tramite un antico medaglione corrotto donatogli da un emissario sotto mentite spoglie. Sir Kaelen sospetta la verità e indirizza i PG verso il covo di chi ha corrotto il Lord: un drago verde adulto di nome **Verdeartiglio (Verdantclaw)**, alleato della Regina dei Draghi, che tesse le trame nell'ombra.
+I PG, pur dormendo in luoghi diversi, condividono lo stesso sogno vivido di un'alba accecante. Si svegliano in piena notte, in stato di trance, e camminano guidati dall'istinto verso le stesse rovine isolate. Quando riprendono pienamente coscienza, si ritrovano faccia a faccia, perfetti sconosciuti di razze rivali, riuniti attorno al frammento del cristallo pulsante.
 
-**`Il Dungeon: Le Rovine Soffocanti di Vingaard`**` Questo antico avamposto di Solamnia è stato reclamato dalla natura corrotta del drago.`
 
-- **`Esterno:`**`  Avvolto in una nebbia velenosa (TS su Costituzione o si è avvelenati). La foresta è un labirinto di rovi taglienti sorvegliato da  `_`Rampicanti Assassini`_`  e pattuglie di  `_`Draconici Baaz`_`.`
-- **`Primo Livello:`**`  Antiche camerate dei cavalieri, ora piene di trappole a base di gas tossico e nidi di  `_`Ragni Giganti`_` corrotti dall'energia draconica.`
-- **`La Sala del Comandante (Tana del Drago):`**` Una vasta sala crollata con il soffitto aperto sul cielo plumbeo. Il pavimento è un pantano acido. Verdeartiglio sfrutta la sua mobilità per attaccare volando dalle rovine superiori, evocando radici avvolgenti come azioni di tana.`
-- **`Scontro e Ricompense:`**` I PG affrontano il Drago Verde Adulto e due Stregoni Draconici.`
-- **`Oggetti Draconici (Fizban's):`**`  Con la morte del drago verde, le armi e gli oggetti draconici dei personaggi assorbono il potere della sua tana, avanzando allo stato di  `**`Risvegliato (Wakened)`**`.`
-- **`Ricompense della Tana:`**`  Il medaglione puro per curare Lord Heltann, 5.000 mo, un  `_`Mantello della Resistenza agli Incantesimi`_`  e una  `_`Verga del Patto del Custode`_`.`
-- **`Livellamento:`**` I PG raggiungono il livello 12. Lord Heltann è libero e mobilita i Cavalieri per Kalaman.`
+## Il Santuario del Conflusso
 
-L'avventura _A Copper for a Song_ si presta magnificamente a questa fase della campagna. Essendo un'avventura originariamente pensata per personaggi di livello 12, incentrata proprio su un drago di rame, su un enigma iniziale e sulla ricerca dei versi perduti di un canto magico capace di rigenerare una terra morente, possiamo fonderla con la nostra trama del drago verde (Verdeartiglio) in modo estremamente fluido.
+Per essere equidistante dagli insediamenti umani, elfici e nanici, il luogo del risveglio deve trovarsi nell'esatto baricentro geografico della valle, un'area che le mappe attuali ignorano o segnano come una semplice depressione boscosa inospitale.
 
-Ecco come puoi adattare il modulo mantenendo intatta la trama per la tua campagna di Dragonlance:
+- **La Faglia:** Un crepaccio naturale nascosto da secoli di vegetazione intricata, i cui bordi presentano antichi simboli d'avvertimento erosi dal tempo.
+- **La Discesa:** I PG si svegliano non all'esterno, ma già sul fondo del crepaccio, dopo aver percorso in stato di trance un'antica scalinata a chiocciola intagliata nella nuda roccia, ormai pericolante.
+- **La Cripta:** Una caverna circolare sotterranea dove le spesse radici di un gigantesco albero morente sfondano la volta, avvolgendo e stritolando un piccolo altare di pietra grezza.
 
-### 1. L'Innesco e L'Enigma (L'Entrata nel Dungeon)
+## La Dinamica del Risveglio
 
-Nell'avventura originale, la premessa si basa sul risolvere un indovinello per accedere al percorso legato al drago.
+Il passaggio dal sonno alla veglia deve essere brutale, disorientante e carico di mistero.
 
-- **L'Adattamento:** Sir Kaelen scopre la natura oscura del medaglione di Lord Heltann e capisce che la magia della Regina dei Draghi è troppo radicata per un semplice incantesimo. Spiega ai PG che l'unica cura è il _Canto della Rinascita_, un'antica magia custodita da un saggio **Drago di Rame**, storico alleato dei Cavalieri di Solamnia.
-- **Il Problema (La Terra Morente):** La tana del drago di rame, situata sotto le Rovine di Vingaard, è stata invasa e conquistata dal drago verde **Verdeartiglio**. La magia malvagia del drago verde sta uccidendo e corrompendo la regione, il che si sposa perfettamente con il tema della "terra morente" del modulo originale.
-- **L'Ingresso:** Arrivati alle Rovine Soffocanti, i PG trovano le porte magiche della tana originale sigillate. Per entrare, devono risolvere l'enigma musicale/bardico previsto da _A Copper for a Song_.
+- **Sensazioni Fisiche:** I personaggi tornano in sé nel cuore della notte, disarmati e sprovvisti del loro equipaggiamento standard. Indossano vesti da notte o abiti leggeri, umidi per la rugiada. Hanno le unghie sporche di terra e le dita escoriate, segno che hanno scavato a mani nude per disseppellire l'altare.
+- **Il Contatto:** Si ritrovano in cerchio, perfetti sconosciuti, con le mani protese verso lo stesso punto focale.
+- **Il Primo Frammento:** Al centro, incastrato tra le radici terrose, giace la Base del Prisma dell'Alba. La pietra pulsa di una luce ambrata fioca che "respira" in perfetta sincronia con il battito cardiaco accelerato dei PG.
 
-### 2. L'Esplorazione: La Ricerca dei Versi Perduti
+## Il Legame del Sangue
 
-Il fulcro dell'avventura ufficiale è la missione per recuperare i frammenti perduti del canto magico.
+Il Prisma frammentato, la cui energia si sta ormai esaurendo, ha emesso un disperato impulso di emergenza, agganciandosi alle "frequenze" vitali più affini nella valle prima di spegnersi del tutto.
 
-- **L'Adattamento:** Verdeartiglio, non potendo distruggere completamente un artefatto di magia benigna, ne ha disperso i versi nei vari settori della tana. I PG devono esplorare le rovine sotterranee per recuperarli.
-- **I Nemici:** Usa le mappe e le stanze del modulo, ma fai un "reskin" (o sostituisci) i nemici base inserendo le truppe di Verdeartiglio: _Draconici Baaz_, coboldi potenziati e letale flora corrotta (gas tossici, rampicanti velenosi) generata dalla sua magia.
-- **Meccanica del Canto:** Ogni volta che i PG recuperano un verso perduto, cantarlo o suonarlo permette loro di purificare una sezione del dungeon, dissipando nubi di gas velenoso o ritraendo barriere di rovi.
-
-### 3. Il Destino del Drago di Rame
-
-Dato che l'avventura si concentra sui draghi di rame, puoi includerne uno per aumentare l'impatto emotivo.
-
-- **L'Adattamento:** In una delle aree sicure della tana, i PG trovano il drago di rame originale. È tenuto prigioniero, magicamente sopito o forse è stato trasformato in pietra da Verdeartiglio. Interagire con lui (o con il suo spirito) fornisce l'ultimo, fondamentale frammento del Canto. Il drago prega gli eroi di sconfiggere l'usurpatore per salvare Vingaard.
-
-### 4. Lo Scontro Finale con Verdeartiglio
-
-La battaglia finale non sarà contro la minaccia originale del modulo, ma contro **Verdeartiglio (Drago Verde Adulto)**, che ha trasformato la sala del tesoro del drago di rame nel suo nido corrotto.
-
-- **Il Potere della Canzone:** Durante il combattimento, i PG possono intonare i versi recuperati. Potresti usare il "Canto" per replicare i buff suggeriti dalle regole speciali di quell'avventura, garantendo ad esempio Punti Ferita Temporanei o disattivando temporaneamente le temibili "azioni di tana" del drago verde (come le radici avvolgenti o le nubi acide).
-- **Il Risveglio Draconico (Fizban's):** Nel momento in cui il drago verde viene ucciso, il suo potere si disperde, entrando in risonanza con la magia purificatrice della canzone appena completata. Questa energia investe i PG e porta i loro oggetti draconici allo stato di **Risvegliato**.
-
-### 5. La Conclusione
-
-Ricomponendo e cantando il _Canto della Rinascita_, la terra attorno alle Rovine di Vingaard inizia istantaneamente a riprendersi. I PG tornano a Maelgoth e usano la stessa magia per purificare il medaglione di Lord Heltann.
-
-La mente del Lord si schiarisce: indignato per essere stato manipolato, giura di marciare immediatamente su Kalaman con l'intero esercito dei Cavalieri di Solamnia. I PG salgono al Livello 12 e l'avventura prosegue come avevamo stabilito!
-
-_Così facendo puoi sfruttare mappe, stanze, l'enigma e la meccanica della canzone dell'avventura ufficiale, senza rinunciare a nessuno dei punti chiave narrativi della tua campagna (Drago malvagio, potenziamento degli oggetti di Fizban e Lord Heltann)._
+- **La Risonanza:** L'umano è stato richiamato dal sangue ancestrale di coloro che si sacrificarono secoli prima; il nano e l'elfo sono stati trascinati dalla pura risonanza della magia elementale e runica insita nel loro lignaggio.
+- **Il Marchio:** Nel preciso momento in cui uno di loro tocca il frammento per estrarlo, un'improvvisa fiammata magica silenziosa li investe. Una sottile cicatrice dorata a forma di raggiera appare sul dorso della mano o sul petto di tutti i presenti, legando il loro destino al sigillo.
