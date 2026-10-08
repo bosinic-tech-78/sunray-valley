@@ -1,7 +1,7 @@
 ---
 title: L'Era Attuale
 data_krynn: Circa 1200 - 1500 DF - Dopo la Frattura
-anno_ac: 3
+anno_ac: 1200
 tipo: Evento Canonico (Lore)
 collegamenti:
   trama_rel: ''
