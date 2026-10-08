@@ -1,7 +1,7 @@
 ---
 title: L'Età dell'Oro dell'Accademia
 data_krynn: Circa 2500 PF - 1 PF
-anno_ac: 2
+anno_ac: -2500
 tipo: Diceria / Evento Lontano
 collegamenti:
   trama_rel: ''
