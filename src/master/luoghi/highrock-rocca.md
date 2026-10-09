@@ -1,6 +1,6 @@
 ---
 title: Highrock (Rocca)
-image: ''
+image: /static/img/Gemini_Generated_Image_9f1pk79f1pk79f1p.jpg
 mappe_lista: []
 box_text: ''
 ---
