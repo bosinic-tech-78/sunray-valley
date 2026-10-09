@@ -1,6 +1,6 @@
 ---
 title: Edgefield (Camporanda)
-image: ''
+image: /static/img/Gemini_Generated_Image_i82723i82723i827.jpg
 mappe_lista: []
 box_text: ''
 ---
