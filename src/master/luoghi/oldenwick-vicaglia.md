@@ -1,6 +1,6 @@
 ---
 title: Oldenwick (Vicaglia)
-image: ''
+image: /static/img/Gemini_Generated_Image_gtspgpgtspgpgtsp.jpg
 mappe_lista: []
 box_text: ''
 ---
