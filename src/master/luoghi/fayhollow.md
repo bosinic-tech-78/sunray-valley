@@ -1,6 +1,6 @@
 ---
 title: Fayhollow
-image: /static/img/Gemini_Generated_Image_ankd1kankd1kankd.jpg
+image: /static/img/Gemini_Generated_Image_874zil874zil874z.jpg
 mappe_lista: []
 box_text: ''
 ---
