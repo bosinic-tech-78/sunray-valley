@@ -8,8 +8,6 @@ image: /static/img/Gemini_Generated_Image_v4lh4wv4lh4wv4lh.jpg
 
 Il Cavaliere di Solamnia Becklin Uth Viharin invia agli avventurieri una lettera per informarli della morte di Ispin Verdescuro; li invita al funerale di Ispin a Vogler. 
 
-![](/static/img/lettera_Becklin.png)
-
 Durante il viaggio verso Vogler, succedono diverse cose:
 
 - Milo viene indirizzato all'ingresso nell'Alta Stregoneria;

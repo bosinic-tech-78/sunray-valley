@@ -1,7 +1,7 @@
 ---
 title: Colchico
 tipo: PG
-image: /static/img/WhatsApp Image 2026-09-24 at 19.00.17.jpeg
+image: ''
 info_base:
   nome_giocatore: Epifanio
   classi:
