@@ -20,8 +20,6 @@ Durante il viaggio verso Vogler, succedono diverse cose:
 
 Gli avventurieri arrivano in mattinata a Vogler per il funerale di Ispin Verdescudo.
 
-![](/static/img/vogler.png)
-
 Esplorano la cittadina e in serata si riuniscono agli abitanti per l'ultimo saluto a Ispin.
 
 ![](/static/img/3-01%20Sending%20Off%20a%20Friend.png)
