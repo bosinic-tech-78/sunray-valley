@@ -1,7 +1,7 @@
 ---
 title: Becklin Uth Viharin
 tipo: PNG
-image: /static/img/3-01 Berklin Uth Viharin.png
+image: ''
 info_base:
   nome_giocatore: ''
   classi:
