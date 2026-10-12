@@ -1,6 +1,6 @@
 ---
 title: La Catacomba Umana (Sotto Highrock - Le Ossa dei Primi Padri)
-image: ''
+image: /static/img/Gemini_Generated_Image_gtvtmvgtvtmvgtvt.jpg
 mappe_lista: []
 box_text: ''
 ---
