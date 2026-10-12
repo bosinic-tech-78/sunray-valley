@@ -1,6 +1,6 @@
 ---
 title: La Cripta Elfica (La Radice Sospirante)
-image: ''
+image: /static/img/Gemini_Generated_Image_aj01uaaj01uaaj01.jpg
 mappe_lista: []
 box_text: ''
 ---
