@@ -1,6 +1,6 @@
 ---
 title: La Forgia Nanica (Thul-Karak)
-image: ''
+image: /static/img/Gemini_Generated_Image_y1bbk6y1bbk6y1bb.jpg
 mappe_lista: []
 box_text: ''
 ---
